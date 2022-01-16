@@ -37,3 +37,19 @@ RIGHT
 MOVE
 
 OUTPUT : 1,1,EAST,assets/images/BLACK.png
+
+
+
+CASE 3
+
+INPUT : 6,3,EAST,assets/images/WHITE.png
+
+MOVE
+
+LEFT
+
+MOVE
+
+MOVE
+
+OUTPUT : 6,2,WEST,assets/images/WHITE.png
