@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Moving PAWN Simulator
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="background-color" [fullscreen]="true">
+  <ion-content padding>
+    <h3 class="ion-text-center">PAWN Simulator</h3>
+    <ion-grid *ngIf="showBoard">
+      <ion-row class="row-height" *ngFor="let chessRow of chessBoardObject; let r = index;">
+        <ion-col [ngClass]="{'white-box':calcBoxColor(r,c),'black-box':calcBoxColor(r,c)}"
+          *ngFor="let chessCol of chessRow; let c = index;">
+          <img src="{{getImageOnBoard(chessCol, r, c)}}" />
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-button size="small" color="secondary" (click)="open_input()"> Place</ion-button>
+    <ion-button size="small" color="secondary" (click)="pawn_movement()"> Move</ion-button>
+    <ion-button size="small" color="secondary" (click)="position('WEST')">LEFT</ion-button>
+    <ion-button size="small" color="secondary" (click)="position('EAST')"> RIGHT</ion-button>
+    <ion-button size="small" color="secondary" (click)="position('NORTH')">NORTH</ion-button>
+    <ion-button size="small" color="secondary" (click)="position('SOUTH')"> SOUTH</ion-button>
+    <ion-button size="small" color="secondary" (click)="report()"> REPORT</ion-button>
+    <ion-grid *ngIf="show_output">
+      <ion-row>
+        <ion-col size="3">Input</ion-col>
+        <ion-col size="9" class="text-size">{{input}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="3">Output</ion-col>
+        <ion-col  size="9"  class="text-size">{{output}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-content>

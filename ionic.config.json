@@ -1,0 +1,7 @@
+{
+  "name": "pawn",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
